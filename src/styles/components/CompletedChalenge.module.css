@@ -1,0 +1,19 @@
+.CompletedChalenge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 3.5em 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #d7d8da;
+
+    font-weight: 500;
+}
+
+.CompletedChalenge span:first-child {
+    font-size: 1.25rem;
+}
+
+.CompletedChalenge span:last-child {
+    font-size: 1.5rem;
+}
