@@ -1,0 +1,80 @@
+.ChalengeBoxContainer{
+    height: 100%;
+
+    background: var(--white);
+    border-radius: 5px;
+    box-shadow: 0 0 60 rgba(0, 0, 0, 0.05);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.ChalengeBoxNotActive{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ChalengeBoxNotActive strong{
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.ChalengeBoxNotActive p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.4;
+    max-width: 40%;
+    margin-top: 3rem;
+}
+
+.ChalengeBoxNotActive p img{
+    margin-bottom: 1rem;
+}
+
+.ChalengeBoxActive{
+    height: 100%;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.ChalengeBoxActive header{
+    color: var(--blue);
+    font-weight: 600;
+    font-size:1.24rem;
+    padding: 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--gray-line);
+}
+.ChalengeBoxActive main {
+    flex: 1;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ChalengeBoxActive main strong {
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--title);
+    margin: 1.5rem 0 1rem;
+}
+
+.ChalengeBoxActive main p {
+
+}
+
+.challengefailButton {
+
+}
+
+.challengecompleteButton {
+
+}

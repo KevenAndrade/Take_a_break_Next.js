@@ -5,6 +5,7 @@ import { CountDown } from "../components/CountDown";
 import Experiencebar from "../components/Experiencebar";
 import { Perfil } from "../components/Perfil";
 import styles from '../styles/components/Home.module.css';
+import { ChalengeBox } from "../components/ChalengeBox";
 
 
 
@@ -23,7 +24,7 @@ export default function Home() {
         </div>
 
         <div>
-
+          <ChalengeBox/>
         </div>
       </section>
     </div>
