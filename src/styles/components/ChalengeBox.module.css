@@ -68,13 +68,41 @@
 }
 
 .ChalengeBoxActive main p {
+    line-height: 1.5;
+}
 
+.ChalengeBoxActive footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.ChalengeBoxActive footer button{
+    height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border: 0;
+    border-radius: 5px;
+    color: var(--white);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: filter 0.2s;
 }
 
 .challengefailButton {
-
+    background: var(--red);
 }
 
 .challengecompleteButton {
+    background: var(--green);
+}
 
+.ChalengeBoxActive footer button:hover{
+    filter: brightness(0.9);
 }
