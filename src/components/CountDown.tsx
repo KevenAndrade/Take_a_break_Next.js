@@ -80,12 +80,6 @@ export function CountDown(){
                     )}
                 </>
             )}
-
-           
-
-            
-
-            
         </div>
     );
 }

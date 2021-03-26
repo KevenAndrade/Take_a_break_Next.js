@@ -4,8 +4,8 @@ export function Experiencebar(){
         <header className={styles.experienceBar}>
             <span>0 xp</span>
             <div>
-                <div style={{width: '60%'}} />
-                <span className={styles.currentExperience} style={{left: '60%'}}>
+                <div style={{width: '50%'}} />
+                <span className={styles.currentExperience} style={{left: '50%'}}>
                     300 xp
                 </span>
             </div>

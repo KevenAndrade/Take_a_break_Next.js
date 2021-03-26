@@ -11,7 +11,7 @@ export function ChalengeBox(){
             <main>
                 <img src="icons/body.svg" alt=""/>
                 <strong>Novo desafio</strong>
-                <p>Levante e faça uma caminhada de 3 minutos</p>
+                <p>Levante e faça uma caminhada de 3 minutos.</p>
             </main>
             <footer>
                 <button 
