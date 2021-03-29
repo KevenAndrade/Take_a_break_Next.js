@@ -57,7 +57,8 @@ export function ChallengeProvider ({children}: ChallengecontextProps){
             startNewChallenge,
             activeChallenge,
             resetChalenge,
-            experiencetonetxtlevel
+            experiencetonetxtlevel,
+            
          }}
         >
             {children}

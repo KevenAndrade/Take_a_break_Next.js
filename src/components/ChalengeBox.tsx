@@ -4,7 +4,6 @@ import styles from '../styles/components/ChalengeBox.module.css';
 
 export function ChalengeBox(){
     const { activeChallenge, resetChalenge } = useContext(Challengecontext);
-
     return (
     <div className={styles.ChalengeBoxContainer}>
     {activeChallenge ? (
