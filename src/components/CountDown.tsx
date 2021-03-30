@@ -9,8 +9,6 @@ export function CountDown(){
     const [minuteL, minuteR] = String(minutes).padStart(2, '0').split('');
     const [secL, secR] = String(seconds).padStart(2, '0').split('');
 
-   
-
     return (
         <div>
             <div className={styles.countDownContainer}>

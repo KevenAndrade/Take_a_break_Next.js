@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 import challeges from '../../challenges.json';
 
 interface ChallengecontextProps {
@@ -33,6 +33,10 @@ export function ChallengeProvider ({children}: ChallengecontextProps){
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
+    useEffect(()=>{
+        Notification.requestPermission();
+    }, [])
+
     function levelUp(){
         setlevel(level+1);
     }
@@ -42,6 +46,13 @@ export function ChallengeProvider ({children}: ChallengecontextProps){
         const challenge = challeges[ramdonIndex];
 
         setactiveChallenge(challenge);
+
+        if(Notification.permission ==='granted'){
+            console.log('entrou');
+            new Notification('Novo desafio', {
+                body: `Ganhe ${challenge.amount} xp!`
+            })
+        }
     }
 
     function resetChalenge(){
