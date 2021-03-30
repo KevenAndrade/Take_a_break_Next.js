@@ -12,7 +12,7 @@ export function Perfil(){
                 <strong>Keven Andrade</strong>
                 <p>
                     <img src="icons/level.svg" alt="level"/>
-                    Level {level}
+                    Level { level }
                 </p>
             </div>
         </div>

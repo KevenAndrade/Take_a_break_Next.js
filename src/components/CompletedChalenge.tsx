@@ -3,12 +3,12 @@ import { Challengecontext } from '../context/ChallengeContext';
 import styles from '../styles/components/CompletedChalenge.module.css';
 
 export function CompletedChalenge(){
-    const { current } = useContext(Challengecontext);
+    const { challengecompeted } = useContext(Challengecontext);
     
     return (
-        <div className={styles.CompletedChalenge}>
+        <div className={ styles.CompletedChalenge }>
             <span>Desafios completados</span>
-            <span>{current}</span>
+            <span>{ challengecompeted }</span>
         </div>
     )
 }
