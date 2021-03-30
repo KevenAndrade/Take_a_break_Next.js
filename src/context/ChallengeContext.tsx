@@ -1,8 +1,12 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 import challeges from '../../challenges.json';
 
 interface ChallengecontextProps {
     children: ReactNode;
+    level:number,
+    current:number,
+    challengecompeted:number
 }
 
 interface chalenge {
@@ -10,6 +14,7 @@ interface chalenge {
     description: string;
     amount: number
 }
+
 
 interface ChallengesContextData {
     level:number;
@@ -25,10 +30,10 @@ interface ChallengesContextData {
 
 export const Challengecontext = createContext({} as ChallengesContextData);
 
-export function ChallengeProvider ({children}: ChallengecontextProps){
-    const [level, setlevel] = useState(1);
-    const [current, setexperience] = useState(0);
-    const [challengecompeted, setchallengecompeted] = useState(0);
+export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
+    const [level, setlevel] = useState(rest.level ?? 1);
+    const [current, setexperience] = useState(rest.current ?? 0);
+    const [challengecompeted, setchallengecompeted] = useState(rest.challengecompeted ?? 0);
     const [activeChallenge, setactiveChallenge] = useState(null);
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
@@ -36,6 +41,12 @@ export function ChallengeProvider ({children}: ChallengecontextProps){
     useEffect(()=>{
         Notification.requestPermission();
     }, [])
+
+    useEffect(()=>{
+        Cookies.set('level',level.toString());
+        Cookies.set('current',current.toString());
+        Cookies.set('challengecompeted',challengecompeted.toString());
+    }, [level, current, challengecompeted])
 
     function levelUp(){
         setlevel(level+1);
@@ -46,6 +57,8 @@ export function ChallengeProvider ({children}: ChallengecontextProps){
         const challenge = challeges[ramdonIndex];
 
         setactiveChallenge(challenge);
+
+        new Audio('/notification.mp3').play();
 
         if(Notification.permission ==='granted'){
             console.log('entrou');
