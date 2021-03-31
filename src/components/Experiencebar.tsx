@@ -5,8 +5,8 @@ import styles from '../styles/components/ExperienceBar.module.css';
 
 export function Experiencebar(){
     const { current, experiencetonetxtlevel } = useContext(Challengecontext);
-    const percenttoNL = Math.round(current*100) / experiencetonetxtlevel;
-
+    const percenttoNL = Math.round( current*100 ) / experiencetonetxtlevel;
+    console.log(percenttoNL);
     return(
         <header className={styles.experienceBar}>
             <span>0 xp</span>
