@@ -1,6 +1,7 @@
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import React, { createContext, ReactNode, useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import challeges from '../../challenges.json';
+import { LevelUpModal } from '../components/LevelUpModal';
 
 interface ChallengecontextProps {
     children: ReactNode;
@@ -15,7 +16,6 @@ interface chalenge {
     amount: number
 }
 
-
 interface ChallengesContextData {
     level:number;
     current:number;
@@ -26,6 +26,7 @@ interface ChallengesContextData {
     startNewChallenge:()=>void;
     resetChalenge:()=>void;
     completeChalenge:()=>void;
+    closemodalup:()=>void;
 }
 
 export const Challengecontext = createContext({} as ChallengesContextData);
@@ -35,6 +36,7 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
     const [current, setexperience] = useState(rest.current ?? 0);
     const [challengecompeted, setchallengecompeted] = useState(rest.challengecompeted ?? 0);
     const [activeChallenge, setactiveChallenge] = useState(null);
+    const [ismodalup, setmodalup] = useState(false);
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
@@ -50,6 +52,11 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
 
     function levelUp(){
         setlevel(level+1);
+        setmodalup(true);
+    }
+
+    function closemodalup(){
+        setmodalup(false);
     }
 
     function startNewChallenge(){
@@ -101,10 +108,13 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
             activeChallenge,
             resetChalenge,
             experiencetonetxtlevel,
-            completeChalenge
+            completeChalenge,
+            closemodalup
          }}
         >
             {children}
+
+            {ismodalup && <LevelUpModal/>}
         </Challengecontext.Provider>
     )
 }
