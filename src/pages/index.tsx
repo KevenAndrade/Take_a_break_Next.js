@@ -9,6 +9,7 @@ import styles from '../styles/components/Home.module.css';
 import { ChalengeBox } from "../components/ChalengeBox";
 import { CountDownProvider } from "../context/CountDownContext";
 import { ChallengeProvider } from "../context/ChallengeContext";
+import { LogIn } from "../components/LogIn";
 
 interface homeporps {
   level:number,
