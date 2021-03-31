@@ -116,7 +116,7 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
             {children}
 
             {ismodalup && <LevelUpModal/>}
-            <LogIn/>
+           {/*  <LogIn/> */}
         </Challengecontext.Provider>
     )
 }
