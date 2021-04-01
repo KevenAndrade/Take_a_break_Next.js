@@ -1,5 +1,5 @@
 .container{
-    background: var(--white);
+    background: var(--blue-dark);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -7,7 +7,7 @@
     right: 0;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items:center;
 }
 
@@ -17,9 +17,50 @@
     max-width: 400px;
     padding: 2rem 3rem;
     border-radius:5px;
-    text-align: center;
+    text-align: left;
     
     display:flex;
     flex-direction: column;
+}
 
+.loginbox strong {
+    font-size: 1.25rem;
+    margin-top: 3rem;
+}
+
+.loginbox p {
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.go {
+    display:flex;
+    justify-content:flex-start;
+}
+
+.go input {
+    width: 100%;
+    margin-top: 1rem;
+    height: 2.5rem;
+    background: linear-gradient(90deg, rgba(73,83,184,1) 0%, rgba(89,101,224,1) 35%, rgba(255,255,255,0.7763480392156863) 100%);
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    padding-left: 1rem;
+    margin-right: .25rem;
+
+}
+
+input.input::placeholder { 
+    color: white;
+    opacity: 0.5; 
+}
+
+.go button {
+    margin-top: 1rem;
+    width: 2.5rem;
+    background: var(--blue);
+    border: none;
+    border-radius: 5px;
+    font-size: 0;
 }

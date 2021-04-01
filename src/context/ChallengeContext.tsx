@@ -28,6 +28,7 @@ interface ChallengesContextData {
     resetChalenge:()=>void;
     completeChalenge:()=>void;
     closemodalup:()=>void;
+    login:()=>void;
 }
 
 export const Challengecontext = createContext({} as ChallengesContextData);
@@ -38,9 +39,13 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
     const [challengecompeted, setchallengecompeted] = useState(rest.challengecompeted ?? 0);
     const [activeChallenge, setactiveChallenge] = useState(null);
     const [ismodalup, setmodalup] = useState(false);
+    const [isloged, setisloged] = useState(false);
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
+    function login() {
+        setisloged(true);
+    }
     useEffect(()=>{
         Notification.requestPermission();
     }, [])
@@ -110,13 +115,14 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
             resetChalenge,
             experiencetonetxtlevel,
             completeChalenge,
-            closemodalup
+            closemodalup,
+            login
          }}
         >
             {children}
 
             {ismodalup && <LevelUpModal/>}
-           {/*  <LogIn/> */}
+            {!isloged && <LogIn/> }
         </Challengecontext.Provider>
     )
 }
