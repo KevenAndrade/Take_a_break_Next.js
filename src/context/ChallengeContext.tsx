@@ -25,6 +25,8 @@ interface ChallengesContextData {
     challengecompeted:number;
     activeChallenge: chalenge;
     experiencetonetxtlevel:number;
+    InputError: string;
+    user: user;
     levelUp: ()=>void;
     startNewChallenge:()=>void;
     resetChalenge:()=>void;
@@ -33,6 +35,12 @@ interface ChallengesContextData {
     login:()=>void;
     Gitname: string;
     GetgitName:(name: string)=>void;
+}
+
+interface user {
+    name: string;
+    login: string;
+    avatar_url: string;
 }
 
 export const Challengecontext = createContext({} as ChallengesContextData);
@@ -45,6 +53,9 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
     const [ismodalup, setmodalup] = useState(false);
     const [isloged, setisloged] = useState(false);
     const [Gitname, SetGitname] = useState('');
+    const [InputError, setInputError] = useState('');
+    const [user, setuser] = useState<user | null>(null);
+
 
 
     function GetgitName(name: string){
@@ -54,13 +65,25 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
-    function login() {
+    async function login() {
         if (!Gitname) {
-            setInputError('Digite o autor/nome do repositorio');
+            setInputError('Preencha o campo');
             return;
         }
+
+        /* because um using NEXT.JS in this progect i cant maca api calls in here, but yh nice try Keven
+         try {
+            api.get<user>(`users/${Gitname}`).then(response => {
+                setuser(response.data);
+                console.log(user.name);
+            })
+            
+        } catch (error) {
+            setInputError('Usuario não existe');
+        } */
         setisloged(true);
     }
+
     useEffect(()=>{
         Notification.requestPermission();
     }, [])
@@ -133,7 +156,9 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
             closemodalup,
             login,
             Gitname,
-            GetgitName
+            GetgitName,
+            InputError,
+            user
          }}
         >
             {children}

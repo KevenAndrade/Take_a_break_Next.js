@@ -3,7 +3,7 @@ import { useContext, useState } from 'react';
 import styles from '../styles/components/LogIn.module.css';
 
 export function LogIn(){
-    const { login, Gitname, GetgitName } = useContext(Challengecontext);
+    const { login, Gitname, GetgitName, InputError } = useContext(Challengecontext);
     
 
     return (
@@ -25,6 +25,7 @@ export function LogIn(){
                         <img src="/next.png" alt="Login"/>
                     </button>
                 </div>
+                {!!InputError && (<span>{InputError}</span>) }
             </div>
         </div>
     )
