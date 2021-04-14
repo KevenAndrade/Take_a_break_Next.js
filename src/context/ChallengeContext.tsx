@@ -40,6 +40,7 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
     const [activeChallenge, setactiveChallenge] = useState(null);
     const [ismodalup, setmodalup] = useState(false);
     const [isloged, setisloged] = useState(false);
+    
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
