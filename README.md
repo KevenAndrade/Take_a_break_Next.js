@@ -35,6 +35,8 @@ Here the user can:
 
 ### Level UP 🚀🚀
 
+When a user wins the right amount of XP, he/her will level Up 🚀🚀
+
 ![tela de dashbord](https://github.com/KevenAndrade/Take_a_break_Next.js/blob/main/src/screens/level_up.png?raw=true)
 
 
