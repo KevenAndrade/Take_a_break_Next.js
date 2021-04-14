@@ -1,4 +1,6 @@
 import React, { createContext, ReactNode, useEffect, useState } from 'react';
+
+import api from '../services/api';
 import Cookies from 'js-cookie';
 import challeges from '../../challenges.json';
 import { LevelUpModal } from '../components/LevelUpModal';
@@ -29,6 +31,8 @@ interface ChallengesContextData {
     completeChalenge:()=>void;
     closemodalup:()=>void;
     login:()=>void;
+    Gitname: string;
+    GetgitName:(name: string)=>void;
 }
 
 export const Challengecontext = createContext({} as ChallengesContextData);
@@ -40,11 +44,21 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
     const [activeChallenge, setactiveChallenge] = useState(null);
     const [ismodalup, setmodalup] = useState(false);
     const [isloged, setisloged] = useState(false);
-    
+    const [Gitname, SetGitname] = useState('');
+
+
+    function GetgitName(name: string){
+        SetGitname(name);
+        console.log(name);
+    }
 
     const experiencetonetxtlevel = Math.pow((level + 1 ) * 4, 2)
 
     function login() {
+        if (!Gitname) {
+            setInputError('Digite o autor/nome do repositorio');
+            return;
+        }
         setisloged(true);
     }
     useEffect(()=>{
@@ -117,7 +131,9 @@ export function ChallengeProvider ({children, ...rest }: ChallengecontextProps){
             experiencetonetxtlevel,
             completeChalenge,
             closemodalup,
-            login
+            login,
+            Gitname,
+            GetgitName
          }}
         >
             {children}

@@ -11,6 +11,7 @@
     justify-content: center;
 
     text-align: center;
+    padding: 10px;
 }
 
 .ChalengeBoxNotActive{
@@ -46,11 +47,11 @@
 }
 
 .ChalengeBoxActive header{
-    color: var(--blue);
+    color: #BF1A2F;
     font-weight: 600;
     font-size:1.24rem;
     padding: 1.5rem 1.5rem;
-    border-bottom: 1px solid var(--gray-line);
+    border-bottom: 2px solid #BF1A2F;
 }
 .ChalengeBoxActive main {
     flex: 1;
@@ -96,7 +97,7 @@
 }
 
 .challengefailButton {
-    background: var(--red);
+    background: #BF1A2F;
 }
 
 .challengecompleteButton {

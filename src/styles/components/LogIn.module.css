@@ -42,7 +42,7 @@
     width: 100%;
     margin-top: 1rem;
     height: 2.5rem;
-    background: linear-gradient(90deg, rgba(73,83,184,1) 0%, rgba(89,101,224,1) 35%, rgba(255,255,255,0.7763480392156863) 100%);
+    background: linear-gradient(90deg, rgba(67,103,136,1) 0%, rgba(89,101,224,1) 35%, rgba(255,255,255,0.7763480392156863) 100%);
     border: none;
     border-radius: 5px;
     color: var(--white);
@@ -59,7 +59,7 @@ input.input::placeholder {
 .go button {
     margin-top: 1rem;
     width: 2.5rem;
-    background: var(--blue);
+    background: #1C3144;
     border: none;
     border-radius: 5px;
     font-size: 0;
